@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "checkJs": true,
+    "allowJs": true, // js 파일 허용
+    "checkJs": true, // js 파일 타입 오류 체크
     "target": "es5",
-    "lib": ["es2015", "dom", "dom.iterable"],
-    "noImplicitAny": false
+    // "target": "ES2015", // js 지원 버전 지정
+    "lib": ["es2015", "dom", "dom.iterable"], // 내장 타입 선언 적용할 js 라이브러리 지정
+    "noImplicitAny": true, // 암묵적으로 any 타입 지정
+    "strict": true // 엄격한 타입 비교(null-undefined, 파라미터, this 바인딩 등)
   },
-  "include": ["./src/**/*"]
+  "include": ["./src/**/*"] // 컴파일 폴더 지정
 }

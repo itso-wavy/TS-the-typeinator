@@ -26,10 +26,7 @@ const developer: { name: string; level: number } = {
 const array1: Array<string> = ['a', 'b', 'c'];
 const array2: string[] = ['a', 'b', 'c'];
 
-const array3: Array<number> = [1, 2, 3];
-const array4: number[] = [1, 2, 3];
-
-// const array5: Array<T> = [1, 2, 3]; 제네릭 -> 10장
+// const array3: Array<T> = [1, 2, 3]; 제네릭 -> 10장
 
 // 6. tuple: 특정 형태를 갖는 배열,
 // 배열 길이 고정+각 요소의 타입 지정된 배열

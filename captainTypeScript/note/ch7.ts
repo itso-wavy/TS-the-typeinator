@@ -15,51 +15,41 @@ logText3(message);
 3. 확장 차이
 */
 
-// 1. vscode 인텔리전스에서 보여주는 타입 정보가 다름
+// 1. vscode 인텔리전스에서 보여주는 미리보기 정보가 다름
 type Type3 = {
   id: string;
   name: string;
 };
-
 interface Type4 {
   id: string;
   name: string;
 }
 
-const obj: Type3 = {
-  id: '',
-  name: '',
-};
+var obj: Type3;
 /* 
 type Type3 = {
   id: string;
   name: string;
 }
 */
-const obj2: Type4 = {
-  id: '',
-  name: '',
-};
+var obj2: Type4;
 /* interface Type4 */
 
-// 2. 인터페이스는 주로 객체의 타입을 정의하는 데 사용(여러 값의 타입을 한번에 지정)/타입 별칭은 주요 데이터 타입, 유니언, 인터섹션 타입 정의에 사용. 제네릭, 유틸리티 타입 등에도 사용 가능❗❗
+// 2.
+// 인터페이스: 객체
+// 타입 별칭:주요 데이터 타입, 유니언, 인터섹션, 제네릭, 유틸리티 타입
 type TShirt = any;
 type Shoes = any;
 type Adult = any;
-
-interface Person {
-  name?: string; // 옵셔널 파라미터 적용
-  age: number;
-}
-
-type Product = TShirt | Shoes;
-type Teacher = Person & Adult;
+type Product = TShirt | Shoes; // 유니언
+type Teacher = TShirt & Adult; // 인터섹션
 
 type Gilbut<T> = {
+  // 제네릭
   book: T;
 };
 type Beer = any;
-type MyBeer = Pick<Beer, 'brand'>;
+type MyBeer = Pick<Beer, 'brand'>; // 유틸리티
 
 // 인터페이스와 타입 같이 사용 가능
 interface Man {
@@ -72,7 +62,7 @@ type Korean = {
 
 type MyTeacher = Man & Korean;
 
-// 3. 타입 확장(타입+타입=뉴타입) 차이
+// 3. 타입 확장 차이
 // 인터페이스 확장: NewType extends Type {}
 // 타입 확장: NewType = Type1 & Type2
 
@@ -92,15 +82,19 @@ const obj3: Inter = {
   skill: '',
 };
 
-// ! 타입 별칭으로만 정의가 가능한 곳에서는 별칭을 사용하고, 백엔드와의 인터페이스를 정의하는 곳에서는 인터페이스를 사용하자.
+// 😎타입 별칭 예시 코드
 type Developer = string; // 일반 데이터 타입
 type StringOrNumber = string | number; // 유니온
-type Admin = Person & Developer; // 인터섹션
+type Admin = Man & Developer; // 인터섹션
 
-// 제네릭
+// 제네릭: 일반화된 데이터 타입 생성
 type Dropdown<T> = {
-  id: string;
+  id: number;
   title: T;
+};
+const dropdown: Dropdown<string> = {
+  id: 1,
+  title: 'title',
 };
 
 // 유틸리티 타입: 기존에 정의된 타입 중 일부만 사용
@@ -110,13 +104,18 @@ type Player = {
   role: number;
 };
 type OnlyName = Pick<Player, 'name'>;
+/* 
+type OnlyName = {
+    name: string;
+}
+*/
 
 // 맵드 타입: 기존에 정의된 타입을 변경
 type Picker<T, K extends keyof T> = {
   [P in K]: T[P];
 };
 
-// 백엔드와의 인터페이스 정의
+// 😎백엔드와의 인터페이스 정의
 // jsdocs 사례
 /**
  * @typedef {Object} User
@@ -127,12 +126,19 @@ type Picker<T, K extends keyof T> = {
 /**
  * @returns {User} 1번 사용자
  */
-function fetchData() {
-  return fetch('http://localhost:3000/users/1');
+async function fetchData() {
+  const response = await fetch('http://localhost:3000/users/1');
+
+  return response.json();
 }
 
 // typescript 사례
-type User = {
+interface User {
   id: string;
   name: string;
-};
+}
+async function fetchData2(): Promise<User> {
+  const response = await fetch('http://localhost:3000/users/1');
+
+  return response.json();
+}

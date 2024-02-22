@@ -1,5 +1,5 @@
 // 💙ch6. 연산자 사용(|, &)
-// 유니언 타입(|)
+// 유니언 타입(|): 타입에 따른 메서드 사용
 function logText(text: string | number) {
   console.log(text);
 }
@@ -29,18 +29,10 @@ function introduce(someone: Type1 | Type2) {
 }
 
 function logText2(text: string | number) {
-  console.log(text.valueOf()); // .valueOf(): string | number
+  console.log(text.valueOf()); // (method) valueOf(): string | number
 }
 
 // 인터섹션 타입(&)
-interface Avenger {
-  name: string;
-}
-
-interface Hero {
-  skill: string;
-}
-
 function introduce2(someone: Type1 & Type2) {
   console.log(someone.name);
   console.log(someone.skill);
