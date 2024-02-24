@@ -1,14 +1,13 @@
-// 💙ch8. 이넘(열거형): 상수 집합
-// 여러 개의 상수를 단위로 묶어 사용
-// 타입 자동 추론으로 가독성 향상
+// 💙ch8. 이넘(열거형): 상수 값/타입의 집합,
+// 값: 여러 개의 상수를 단위로 묶어 사용
+// 타입: 타입 자동 추론으로 가독성 향상
 enum ShoesBrand {
   Nike,
   Adidas,
   NewBalance,
 }
-const newShoes = ShoesBrand.Nike; // 0
-const oldShoes = ShoesBrand.Adidas; // 1
-const wishShoes = ShoesBrand.NewBalance; // 2
+let shoesBrand: ShoesBrand; // 타입
+shoesBrand = ShoesBrand.Nike; // 값: 0
 
 // 1. 숫자형 이넘: 이넘 속성 값이 숫자(기본값)
 enum Direction {
@@ -104,3 +103,14 @@ const appLevel = logLevel2.Debug;
 
 const appLevel = "Debug"
 */
+
+// 이넘 값과 타입의 활용
+enum RoutineType {
+  Home = 'home',
+  Office = 'office',
+  Studio = 'studio',
+}
+function myRoutine(routine: RoutineType) {
+  console.log(routine);
+}
+myRoutine(RoutineType.Studio);
