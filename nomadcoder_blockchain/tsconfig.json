@@ -1,0 +1,14 @@
+{
+  "include": ["src-TS_declarationFiles", "src2-JSDoc"],
+  "compilerOptions": {
+    "outDir": "build",
+    // "esModuleInterop": true,
+    "target": "ES5",
+    "lib": ["ES6"],
+    // "lib": ["ES6", "DOM", "DOM.Iterable"],
+    // window, document, localStorage API ...
+    "strict": true,
+    // "allowJs": true,
+    "module": "CommonJS"
+  }
+}

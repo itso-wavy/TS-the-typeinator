@@ -1,0 +1,20 @@
+{
+  "name": "nomadcoder_blockchain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node build/src2-JSDoc/index.js",
+    "bs": "npm run build && npm start",
+    "dev": "nodemon --exec ts-node src4-blockchain/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.11.26",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.2"
+  }
+}
