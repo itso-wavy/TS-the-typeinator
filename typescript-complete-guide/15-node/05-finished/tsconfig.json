@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    /* Node */
+    "target": "ES2020",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "esModuleInterop": true, // CommonJS와 ES 모듈 간 일치
+    "allowSyntheticDefaultImports": true, // ts가 ES모듈->CommonJS로 가져올 때 default import 문법을 사용할 수 있도록 허용
+
+    /* Bundler mode */
+    // "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    // "isolatedModules": true,
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+
+    // "forceConsistentCasingInFileNames": true
+  }
+}
