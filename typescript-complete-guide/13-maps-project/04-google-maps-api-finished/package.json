@@ -1,0 +1,25 @@
+{
+  "name": "understanding-typescript",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server"
+  },
+  "devDependencies": {
+    "ts-loader": "^6.2.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "dependencies": {
+    "@types/googlemaps": "^3.43.3",
+    "axios": "^1.6.8"
+  }
+}
