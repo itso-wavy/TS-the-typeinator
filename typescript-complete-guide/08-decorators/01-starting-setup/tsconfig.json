@@ -1,0 +1,71 @@
+{
+  // "include": ["src/**/*"], // 컴파일 대상 폴더, 파일. 명시하지 않으면 프로젝트 전체
+  // "exclude": ["node_modules"], // 컴파일 제외 폴더, 파일. 명시하지 않으면 "node_modules"은 기본 설정
+  // "files": [], // 컴파일 대상 개별 파일
+  "compilerOptions": {
+    /* 기본 컴파일 옵션 */
+    "incremental": true, // 이전 컴파일 내용과 비교해 변경된 부분만 컴파일, 컴파일 시간 단축
+    "target": "es2018", // 컴파일 된 js의 버전 지정: 'ES3'(default), 'ES5', 'ES2015'(es6), 'ES2016', 'ES2017', 'ES2018', 'ES2019' or 'ESNEXT'
+    "module": "commonjs", // 모듈 시스템 선택
+    "moduleResolution": "node", // 모듈 해석 방식: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'
+    // "lib": ["DOM", "DOM.Iterable", "ESNext", "ScriptHost"], // 컴파일에 포함할 라이브러리
+    "allowJs": true, // js 파일 포함
+    // "checkJs": true, // .js 파일 구문 검사
+    "jsx": "react-jsx", // 결과 코드 jsx 지원 여부: 'preserve(보존)', 'react-jsx(react 17 이상 jsx로 변환)', 'react-native', or 'react(react 16 이하 jsx로 변환)'.
+    // "declaration": true, // '.d.ts' 선언(매니페스트) 파일 생성
+    // "declarationMap": true, // '.d.ts' 선언 맵 파일 생성
+    "sourceMap": true, // 개발자 도구에서 확인할 수 있는 소스 맵 파일 생성, 디버깅에 도움(소스 맵: 원래의 소스 코드와 컴파일된 코드 간의 매핑 정보를 포함)
+    // "outFile": "./", // 출력을 단일 파일로 연결하여 내보냄
+    "rootDir": "./src", // 입력 파일 루트 디렉토리(src)
+    "outDir": "./dist", // 파일 출력 디렉토리(dist), rootDir부터 트리를 생성함
+    // "composite": true, // 프로젝트 컴파일 활성화
+    // "tsBuildInfoFile": "./",               /* incremental 컴파일 정보를 저장할 파일 지정 */
+    // "removeComments": false, // 컴파일에 주석 포함
+    // "noEmit": true, // 검사만 하고 컴파일 파일 출력 안 함
+    // "importHelpers": true,                 /* 'tslib'에서 방출 도우미를 가져옵니다. */
+    // "downlevelIteration": true, // 'ES5'|'ES3' 버전의 js 코드에서 이터레이터('for-of', spread, destructuring 등) 사용시 컴파일 오류 발생하는 케이스가 있어 이를 방어함
+    // "isolatedModules": true,               /* 각 파일을 별도의 모듈로 변환합니다('ts'와 유사).transpileModule'). */
+    "noEmitOnError": true, // 에러 발생시 컴파일 중단
+
+    /* strict mode 옵션 */
+    "strict": true, // 엄격 모드 활성화. 아래 옵션에 모두 true한 것과 같음. 예를 들어 묵시적 any 타입 사용 불가
+    // "noImplicitAny": true, // 암묵적 any 타입 사용 불허용
+    // "strictNullChecks": true, // 엄격한 null 검사
+    // "strictFunctionTypes": true, // 엄격한 함수 타입 검사
+    // "strictBindCallApply": true, // bind, call, apply 메서드의 this 바인딩과 매개변수 전달 엄격한 타입 검사
+    // "strictPropertyInitialization": true, // 엄격한 클래스 속성 초기화
+    // "noImplicitThis": true, // 현재 코드 블럭 내에서 this의 참좃값이 명확하지 않을 때 경고
+    // "alwaysStrict": true, // 출력된 js 코드에 "use strict" 사용
+
+    /* 추가 확인 */
+    "noUnusedLocals": true, // 사용하지 않는 지역 변수가 있는 경우 경고(전역 X)
+    "noUnusedParameters": true, // 사용되지 않은 함수 파라미터가 있는 경우 경고
+    "noImplicitReturns": true, // 함수에 return 문 없이 종료되는 경우가 있다면 경고
+    // "noFallthroughCasesInSwitch": true, // 스위치 문에서 break를 작성하지 않은 경우 경고
+
+    /* 모듈 해상도 옵션 */
+    // "moduleResolution": "node",            /* 모듈 해결 전략을 지정합니다. '노드'(Node.js) 또는 '클래식'(TypeScript pre-1).pre-1.6). */
+    // "baseUrl": "./",                       /* 절대가 아닌 모듈 이름을 확인하기 위한 기본 디렉토리입니다. */
+    // "paths": {},                           /* 상대적인 조회 위치로 가져오기를 다시 매핑하는 일련의 항목'baseUrl'. */
+    // "rootDirs": [],                        /* 결합된 내용이 프로젝트의 구조를 나타내는 루트 폴더 목록 */
+    // "typeRoots": [],                       /* 형식 정의를 포함할 폴더 목록입니다. */
+    // "types": [],                           /* 컴파일에 포함할 선언 파일을 입력합니다. */
+    // "allowSyntheticDefaultImports": true,  /* 기본 내보내기가 없는 모듈에서 기본 가져오기를 허용합니다. 이것은 코드 배출에 영향을 주지 않으며, 단지 확인을 입력하십시오. */
+    "esModuleInterop": true /* ES 모듈과 CommonJS 모듈 간의 호환성을 높임 */,
+    // "preserveSymlinks": true,              /* symlinks의 실제 경로를 확인하지 마십시오. */
+    // "allowUmdGlobalAccess": true,          /* 모듈에서 UMD Global에 액세스할 수 있도록 허용합니다. */
+
+    /* 소스 맵 옵션 */
+    // "sourceRoot": "",                      /* 디버거가 소스 위치 대신 TypeScript 파일을 찾을 위치를 지정합니다. */
+    // "mapRoot": "",                         /* 디버거가 맵 파일을 생성하는 위치가 아닌 위치를 지정합니다. */
+    // "inlineSourceMap": true,               /* 별도의 파일이 있는 대신 소스 맵이 있는 단일 파일을 내보냅니다. */
+    // "inlineSources": true,                 /* 단일 파일 내의 소스 맵과 함께 소스를 내보냅니다. '--inlineSourceMap' 또는 '--sourceMap'을 설정해야 합니다. */
+
+    /* 실험 옵션 */
+    "experimentalDecorators": true /* ES7 데코레이터에 대한 실험적 지원이 가능합니다. */,
+    // "emitDecoratorMetadata": true,         /* 데코레이터용 메타데이터를 방출하는 실험적 지원을 가능하게 합니다. */
+
+    /* 고급 옵션 */
+    "forceConsistentCasingInFileNames": true /* 대소문자 구분을 강제 */
+  }
+}
